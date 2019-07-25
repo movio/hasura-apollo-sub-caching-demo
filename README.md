@@ -15,4 +15,4 @@ Then point your browser at http://localhost:1234
 
 # What is the issue ?
 
-The demo has two page, a home page and a todo page. When goin going from the home page to the todo page and back, the expected behavior is not have a render with "loading=true".
+The demo has two pages, a home page and a todo page. When going from the home page to the todo page and back, the expected behaviour is not to have a render with "loading=true".
