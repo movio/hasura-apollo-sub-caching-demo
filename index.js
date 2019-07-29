@@ -39,9 +39,10 @@ const todoListSubscription = gql`
 
 function Homepage() {
   return (
-    <Subscription subscription={todoListSubscription}>
+    // passing any fetchPolicy here does the same, the inner component always renders twice
+    <Subscription fetchPolicy={"cache-only"} subscription={todoListSubscription}>
       {({ loading, error, data }) => {
-        console.log("loading is", loading);
+        console.log("(todos) loading is", loading);
         if (loading) return <div>Loading...</div>;
         if (error) return <div>Error: {JSON.stringify(error, null, 4)}</div>;
         return (
@@ -69,8 +70,10 @@ const todoSubscription = gql`
 
 function Todo({ match }) {
   return (
-    <Subscription subscription={todoSubscription} variables={{ pk: match.params.id }}>
+    // passing any fetchPolicy here does the same, the inner component always renders twice
+    <Subscription fetchPolicy={"cache-only"} subscription={todoSubscription} variables={{ pk: match.params.id }}>
       {({ loading, error, data }) => {
+        console.log("(todo) loading is", loading);
         if (loading) return <div>Loading...</div>;
         if (error) return <div>Error: {JSON.stringify(error, null, 4)}</div>;
         if (data.todos.length !== 1) return <div>not found</div>;
