@@ -1,5 +1,11 @@
 This repo demonstrates an issue with caching subscriptions in Apollo React 2.5.8.
 
+# Requirements
+
+* `npm` 
+* `docker-compose`
+* `hasura` (Hasura CLI: see https://docs.hasura.io/1.0/graphql/manual/hasura-cli/install-hasura-cli.html)
+
 # How To Run
 
 ```
