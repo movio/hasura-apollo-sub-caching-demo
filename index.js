@@ -21,12 +21,10 @@ const client = new ApolloClient({
 
 const App = () => (
   <div>
-    <div className="container" id="container">
-      <Router>
-        <Route path="/" exact component={Homepage} />
-        <Route path="/todo/:id" component={Todo} />
-      </Router>
-    </div>
+    <Router>
+      <Route path="/" exact component={Homepage} />
+      <Route path="/todo/:id" component={Todo} />
+    </Router>
   </div>
 );
 
